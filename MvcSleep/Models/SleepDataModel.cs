@@ -14,7 +14,7 @@ namespace MvcSleep.Models
         public int Id { get; set; }
         public string SleepDataName { get; set; }
         public string SleepDataAnnotation { get; set; }
-        public List<double> SleepDataRecords { get; set; }
+        public List<MyRecords> SleepDataRecords { get; set; }
     }
 
 
