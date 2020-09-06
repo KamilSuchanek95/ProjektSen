@@ -29,6 +29,13 @@
             </div>
         </nav>
     </header>
+    <form asp-controller="data" asp-action="upload" asp-antiforgery="false"
+        class="dropzone" id="UploadForm" enctype="multipart/form-data">
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+            <input type="submit" value="Upload" />
+        </div>
+    </form>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
