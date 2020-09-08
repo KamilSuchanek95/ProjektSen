@@ -7,16 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcSleep.Data;
 using MvcSleep.Models;
+using MvcSleep;
+using System.IO;
+using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Hosting;
+
 
 namespace MvcSleep.Controllers
 {
     public class SleepDataModelsController : Controller
     {
         private readonly MvcSleepDataContext _context;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public SleepDataModelsController(MvcSleepDataContext context)
+
+        public SleepDataModelsController(MvcSleepDataContext context, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         // GET: SleepDataModels
@@ -145,6 +153,30 @@ namespace MvcSleep.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> Upload()
+        {
+            var files = HttpContext.Request.Form.Files;
+            // var uploads = Path.Combine(_env.WebRootPath, "Uploads");
+            var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads");
+            foreach (var file in files)
+            {
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse
+                        (file.ContentDisposition).FileName.Trim('"');
+                    System.Console.WriteLine(fileName);
+                    var filePath = Path.Combine(uploads, fileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create)) {
+                    await file.CopyToAsync(fileStream);
+                }
+                    // file.SaveAs(Path.Combine(uploads, fileName));
+                }
+            }
+    
+            return Ok();
+        }
         private bool SleepDataModelExists(int id)
         {
             return _context.SleepData.Any(e => e.Id == id);

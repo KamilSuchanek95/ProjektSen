@@ -69,3 +69,8 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+Dropzone.options.UploadForm = {
+  maxFilesize: 20, // MB
+  acceptedFiles : "image/*"
+};

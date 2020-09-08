@@ -14392,6 +14392,11 @@
   "RootNamespace": "MvcSleep",
   "Documents": [
     {
+      "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/SleepDataModels/Index.cshtml",
+      "TargetPath": "Views\\SleepDataModels\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -14412,6 +14417,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/SleepDataModels/Delete.cshtml",
+      "TargetPath": "Views\\SleepDataModels\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/SleepDataModels/Details.cshtml",
+      "TargetPath": "Views\\SleepDataModels\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -14424,6 +14439,16 @@
     {
       "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/SleepDataModels/Create.cshtml",
+      "TargetPath": "Views\\SleepDataModels\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kamil/Pulpit/ProjektSen/MvcSleep/Views/SleepDataModels/Edit.cshtml",
+      "TargetPath": "Views\\SleepDataModels\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],
